@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vineet Mundada - Portfolio</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        background: '#111111',
+                        surface: '#1a1a1a',
+                        primary: '#3b82f6', 
+                        text: '#e5e5e5',
+                        muted: '#a3a3a3'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #111111;
+            color: #e5e5e5;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111111;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #444;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Wiki Link Styling */
+        .wiki-link {
+            color: #e5e5e5;
+            text-decoration: underline;
+            text-decoration-color: #525252;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+            transition: all 0.2s;
+        }
+        .wiki-link:hover {
+            color: #3b82f6; /* Primary color */
+            text-decoration-color: #3b82f6;
+        }
+
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-white">
+
+    <!-- Main Container -->
+    <main class="max-w-2xl mx-auto px-6 py-12 md:py-20 flex flex-col gap-12">
+
+        <!-- Header / Hero Section -->
+        <header class="flex flex-col gap-4 fade-in">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-white">
+                        Vineet Mundada
+                    </h1>
+                    <p class="text-lg text-muted mt-2">
+                        <a href="https://en.wikipedia.org/wiki/Telecommunications_engineering" target="_blank" class="wiki-link">Electronics & Telecommunication Engineer</a> | <a href="https://en.wikipedia.org/wiki/Very_Large_Scale_Integration" target="_blank" class="wiki-link">VLSI</a> & <a href="https://en.wikipedia.org/wiki/Intelligent_Network" target="_blank" class="wiki-link">Intelligent Networks</a> Enthusiast
+                    </p>
+                </div>
+                <!-- Profile Image with Lightbox Trigger -->
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-surface rounded-full flex items-center justify-center border border-white/10 overflow-hidden shrink-0 relative cursor-pointer group transition-transform hover:scale-105" onclick="openModal()">
+                    <!-- Icon shows if image is missing -->
+                    <i class="fa-solid fa-user text-muted text-2xl absolute"></i>
+                    <!-- Actual Image -->
+                    <img src="IMG_7225.jpg" 
+                         alt="Vineet Mundada" 
+                         class="w-full h-full object-cover relative z-10" 
+                         onerror="this.style.display='none'">
+                    <!-- Hover overlay hint -->
+                    <div class="absolute inset-0 bg-black/30 z-20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="fa-solid fa-expand text-white text-xs"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex gap-4 mt-2">
+                <a href="https://www.linkedin.com/in/vineet-mundada-1b64ba253" target="_blank" class="text-muted hover:text-white transition-colors duration-200" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin text-xl"></i>
+                </a>
+                <a href="#" target="_blank" class="text-muted hover:text-white transition-colors duration-200" title="X (Twitter)">
+                    <i class="fa-brands fa-x-twitter text-xl"></i>
+                </a>
+                <a href="mailto:mundadavineetm@gmail.com" class="text-muted hover:text-white transition-colors duration-200" title="Email">
+                    <i class="fa-solid fa-envelope text-xl"></i>
+                </a>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section class="fade-in delay-100">
+            <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span> About
+            </h2>
+            <div class="text-muted leading-relaxed space-y-4">
+                <p>
+                    I am a final-year <a href="https://en.wikipedia.org/wiki/Telecommunications_engineering" target="_blank" class="wiki-link">Electronics and Telecommunication Engineering</a> student at Pune Institute of Computer Technology (PICT). My journey began with a childhood curiosity about how wireless devices communicate, which has matured into a disciplined pursuit of becoming an architect of technology. I am deeply fascinated by the complex architectures that keep our society connected, specifically in the realms of <a href="https://en.wikipedia.org/wiki/Very_Large_Scale_Integration" target="_blank" class="wiki-link">VLSI</a> and <a href="https://en.wikipedia.org/wiki/Intelligent_Network" target="_blank" class="wiki-link">intelligent networks</a>.
+                </p>
+                <p>
+                    My academic path is defined by a transition from theoretical understanding to practical application. Whether it's debugging simulations for <a href="https://en.wikipedia.org/wiki/Unmanned_aerial_vehicle" target="_blank" class="wiki-link">UAV</a> networks or mentoring underprivileged students in <a href="https://en.wikipedia.org/wiki/Science,_technology,_engineering,_and_mathematics" target="_blank" class="wiki-link">STEM</a>, I am driven by a desire to bridge the gap between hardware and software to solve real-world problems.
+                </p>
+            </div>
+        </section>
+
+        <!-- Experience / Projects Section -->
+        <section class="fade-in delay-200">
+            <h2 class="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-green-500"></span> Projects & Research
+            </h2>
+            
+            <div class="grid gap-6">
+                <!-- Project Card 1 -->
+                <a href="#" class="group block p-4 -mx-4 rounded-xl hover:bg-surface transition-all duration-300 border border-transparent hover:border-white/5">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="font-medium text-white group-hover:text-primary transition-colors">
+                            UAV-Enabled 5G Communication
+                            <span class="inline-block transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+                        </h3>
+                        <span class="text-xs text-muted font-mono">Capstone</span>
+                    </div>
+                    <p class="text-sm text-muted mt-2">
+                        Worked on "ML-Based Trajectory Optimization for <a href="https://en.wikipedia.org/wiki/Unmanned_aerial_vehicle" target="_blank" class="wiki-link">UAV</a>-Enabled <a href="https://en.wikipedia.org/wiki/5G" target="_blank" class="wiki-link">5G</a> Communication." Focused on UAV mobility modeling and <a href="https://en.wikipedia.org/wiki/Reinforcement_learning" target="_blank" class="wiki-link">reinforcement learning</a> integration to act as floating base stations for next-gen networks.
+                    </p>
+                    <div class="flex gap-2 mt-3">
+                        <span class="text-xs bg-white/5 text-muted px-2 py-1 rounded border border-white/5">Machine Learning</span>
+                        <span class="text-xs bg-white/5 text-muted px-2 py-1 rounded border border-white/5">5G</span>
+                        <span class="text-xs bg-white/5 text-muted px-2 py-1 rounded border border-white/5">Simulations</span>
+                    </div>
+                </a>
+
+                <!-- Project Card 2 -->
+                <a href="#" class="group block p-4 -mx-4 rounded-xl hover:bg-surface transition-all duration-300 border border-transparent hover:border-white/5">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="font-medium text-white group-hover:text-primary transition-colors">
+                            ICU Patient Monitoring System
+                            <span class="inline-block transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+                        </h3>
+                        <span class="text-xs text-muted font-mono">Mini-Project</span>
+                    </div>
+                    <p class="text-sm text-muted mt-2">
+                        Developed an affordable biomedical system integrating <a href="https://en.wikipedia.org/wiki/AD8232" target="_blank" class="wiki-link">AD8232</a> <a href="https://en.wikipedia.org/wiki/Electrocardiography" target="_blank" class="wiki-link">ECG</a> acquisition and MAX30102 <a href="https://en.wikipedia.org/wiki/Pulse_oximetry" target="_blank" class="wiki-link">SpO2</a> sensing. Bridged sensors via a combined <a href="https://en.wikipedia.org/wiki/ATmega328" target="_blank" class="wiki-link">ATmega328P</a>-<a href="https://en.wikipedia.org/wiki/ESP32" target="_blank" class="wiki-link">ESP32</a> communication setup for real-time monitoring.
+                    </p>
+                    <div class="flex gap-2 mt-3">
+                        <span class="text-xs bg-white/5 text-muted px-2 py-1 rounded border border-white/5"><a href="https://en.wikipedia.org/wiki/Internet_of_things" target="_blank" class="hover:text-primary transition-colors">IoT</a></span>
+                        <span class="text-xs bg-white/5 text-muted px-2 py-1 rounded border border-white/5"><a href="https://en.wikipedia.org/wiki/Embedded_C" target="_blank" class="hover:text-primary transition-colors">Embedded C</a></span>
+                    </div>
+                </a>
+
+                 <!-- Project Card 3 -->
+                 <a href="#" class="group block p-4 -mx-4 rounded-xl hover:bg-surface transition-all duration-300 border border-transparent hover:border-white/5">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="font-medium text-white group-hover:text-primary transition-colors">
+                            Blockchain Powered Elections
+                            <span class="inline-block transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+                        </h3>
+                        <span class="text-xs text-muted font-mono">Research Paper</span>
+                    </div>
+                    <p class="text-sm text-muted mt-2">
+                        Co-authored "<a href="https://en.wikipedia.org/wiki/Blockchain" target="_blank" class="wiki-link">Blockchain</a> Powered Elections: A Secure and Transparent Approach." Accepted at ICCCNet-2025 for Springer Scopus indexed Publication.
+                    </p>
+                    <div class="flex gap-2 mt-3">
+                        <span class="text-xs bg-white/5 text-muted px-2 py-1 rounded border border-white/5">Blockchain</span>
+                        <span class="text-xs bg-white/5 text-muted px-2 py-1 rounded border border-white/5">Security</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Academic / LOR Highlights -->
+        <section class="fade-in delay-300">
+            <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-purple-500"></span> Recommendations & Skills
+            </h2>
+            <div class="prose prose-invert prose-sm text-muted">
+                <ul class="list-none pl-0 space-y-2">
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-check text-green-500 mt-1.5 text-xs"></i>
+                        <span><strong>Technical Proficiency:</strong> <a href="https://en.wikipedia.org/wiki/Very_Large_Scale_Integration" target="_blank" class="wiki-link">VLSI Design</a> (<a href="https://en.wikipedia.org/wiki/Cadence_Design_Systems" target="_blank" class="wiki-link">Cadence</a>/<a href="https://en.wikipedia.org/wiki/Synopsys" target="_blank" class="wiki-link">Synopsys</a>), <a href="https://en.wikipedia.org/wiki/Computer_network" target="_blank" class="wiki-link">Computer Networks</a>, <a href="https://en.wikipedia.org/wiki/Network_security" target="_blank" class="wiki-link">Network Security</a>, <a href="https://en.wikipedia.org/wiki/Embedded_system" target="_blank" class="wiki-link">Embedded Hardware</a>, <a href="https://en.wikipedia.org/wiki/Biomedical_signal_processing" target="_blank" class="wiki-link">Biomedical Signal Interfacing</a>.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-check text-green-500 mt-1.5 text-xs"></i>
+                        <span><strong>Leadership & Outreach:</strong> Mentored underprivileged children at BNP School in Dighi (IEEE Antennas & Propagation Society).</span>
+                    </li>
+                </ul>
+                <div class="mt-6 p-4 bg-surface rounded-lg border border-white/5 italic text-sm">
+                    "His sincerity, curiosity, steady work ethic, and willingness to take on challenging technical tasks make him a dependable and motivated student... I am confident that the environment and opportunities at your institution will help him further develop his skills."
+                    <br>
+                    <span class="block mt-2 text-xs not-italic text-white/50">— Dr. R.C. Jaiswal, Associate Professor, PICT</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-12 pt-8 border-t border-white/10 text-center text-sm text-muted fade-in delay-300">
+            <p>Maintained by <a href="#" class="underline hover:text-white decoration-muted underline-offset-4">@vineet-mundada</a></p>
+            <p class="mt-2 text-xs opacity-50">&copy; <script>document.write(new Date().getFullYear())</script> All rights reserved.</p>
+        </footer>
+
+    </main>
+
+    <!-- Image Modal / Lightbox -->
+    <div id="imageModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 hidden opacity-0 transition-opacity duration-300" onclick="closeModal()">
+        <!-- Close Button -->
+        <button class="absolute top-6 right-6 text-white/70 hover:text-white text-4xl font-light focus:outline-none">&times;</button>
+        
+        <!-- Modal Content -->
+        <div class="relative max-w-4xl max-h-[90vh] p-2" onclick="event.stopPropagation()">
+            <img src="IMG_7225.jpg" 
+                 alt="Vineet Mundada Full" 
+                 class="max-w-full max-h-[85vh] rounded shadow-2xl object-contain border border-white/10">
+        </div>
+    </div>
+
+    <script>
+        // Modal Logic
+        const modal = document.getElementById('imageModal');
+        const body = document.body;
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            // Small timeout to allow the display:block to apply before changing opacity for transition
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+            }, 10);
+            body.classList.add('overflow-hidden'); // Prevent scrolling
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300); // Wait for transition to finish
+            body.classList.remove('overflow-hidden');
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+
+        // Misc Setup
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Portfolio loaded successfully');
+            
+            // Add a simple hover effect to social icons
+            const icons = document.querySelectorAll('.fa-brands, .fa-solid');
+            icons.forEach(icon => {
+                // Skip icons inside the modal or header profile to prevent conflict
+                if(icon.closest('#imageModal') || icon.closest('.rounded-full')) return;
+
+                icon.addEventListener('mouseenter', () => {
+                    icon.style.transform = 'scale(1.1)';
+                });
+                icon.addEventListener('mouseleave', () => {
+                    icon.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
